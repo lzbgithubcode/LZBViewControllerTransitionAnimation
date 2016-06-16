@@ -126,12 +126,12 @@
 		188E14361D1246AB00EBA390 /* LZBCustomTransition */ = {
 			isa = PBXGroup;
 			children = (
-				188E145B1D1246BE00EBA390 /* Resource */,
-				188E14371D1246AB00EBA390 /* CustomPresentDismiss */,
 				188E143E1D1246AB00EBA390 /* LZBBaseTransition.h */,
 				188E143F1D1246AB00EBA390 /* LZBBaseTransition.m */,
+				188E14371D1246AB00EBA390 /* CustomPresentDismiss */,
 				188E14401D1246AB00EBA390 /* PresentWithDismiss */,
 				188E14471D1246AB00EBA390 /* PushWithPop */,
+				188E145B1D1246BE00EBA390 /* Resource */,
 			);
 			path = LZBCustomTransition;
 			sourceTree = "<group>";

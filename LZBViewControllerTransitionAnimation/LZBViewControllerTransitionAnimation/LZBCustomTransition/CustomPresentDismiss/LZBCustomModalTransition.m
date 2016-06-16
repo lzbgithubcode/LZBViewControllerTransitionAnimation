@@ -12,6 +12,7 @@
 
 @interface LZBCustomModalTransition()
 
+@property (nonatomic, weak) UIViewController *fromViewController;
 
 @end
 
@@ -62,16 +63,43 @@
         [containerView addSubview:toView];
         
         
+
+        //增加手势在后面的View上面
+         self.fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+        [fromTempView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(fromTempViewClick)]];
+        
+        
+        
         //增加动画效果
-        [UIView animateWithDuration:self.duration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+         if(self.bounceIsEnable ==NO)
+         {
+             [UIView animateWithDuration:self.duration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                 
+                 fromTempView.transform = CGAffineTransformMakeScale(self.scale, self.scale);
+                 
+                 toView.transform = CGAffineTransformMakeTranslation(0, -height);
+                 
+             } completion:^(BOOL finished) {
+                 [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+             }];
+         }
+        else
+        {
+            // damp是弹簧系数，velecity:弹簧速度
+            [UIView animateWithDuration:self.duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+               
+                fromTempView.transform = CGAffineTransformMakeScale(self.scale, self.scale);
+                
+                toView.transform = CGAffineTransformMakeTranslation(0, -height);
+                
+            } completion:^(BOOL finished) {
+                
+                  [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            }];
             
-            fromTempView.transform = CGAffineTransformMakeScale(self.scale, self.scale);
-            
-            toView.transform = CGAffineTransformMakeTranslation(0, -height);
-            
-        } completion:^(BOOL finished) {
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        }];
+        }
+        
+      
         
         
     }
@@ -82,19 +110,44 @@
         UIView *toTempView = [containerView.subviews firstObject];  //目的的过度View
          //注意： [containerView.subviews lastObject]就是fromView，也就是外面这个View
         // [containerView.subviews firstObject] 就是保存的上一个动画的toView，但是也不是这个直接的toView
-        [UIView animateWithDuration:self.duration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            toTempView.transform = CGAffineTransformIdentity;
-            fromView.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            toView.alpha =1.0;
-            [toTempView removeFromSuperview];
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        }];
+        if(self.bounceIsEnable == NO)
+        {
+            [UIView animateWithDuration:self.duration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                toTempView.transform = CGAffineTransformIdentity;
+                fromView.transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                toView.alpha =1.0;
+                [toTempView removeFromSuperview];
+                [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            }];
+
+        }
+        else
+        {
+            // damp是弹簧系数，velecity:弹簧速度
+            [UIView animateWithDuration:self.duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                
+                toTempView.transform = CGAffineTransformIdentity;
+                fromView.transform = CGAffineTransformIdentity;
+                
+            } completion:^(BOOL finished) {
+                toView.alpha =1.0;
+                [toTempView removeFromSuperview];
+                [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            }];
+
+        }
         
         
         
     }
     
+}
+
+- (void)fromTempViewClick
+{
+   
+    [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

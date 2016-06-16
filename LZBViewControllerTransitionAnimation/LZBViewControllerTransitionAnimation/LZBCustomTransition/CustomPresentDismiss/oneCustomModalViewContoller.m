@@ -52,6 +52,11 @@
 {
     twoCustomModalViewContoller *twoVC = [[twoCustomModalViewContoller alloc]init];
     self.customModalTransition = [[LZBCustomModalTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
+        LZBCustomModalTransition *modalTransition = (LZBCustomModalTransition *)transition;
+        modalTransition.scale = 0.9;
+        modalTransition.bounceIsEnable = YES;
+//        modalTransition.toViewRequireHeight = 200;
+//        modalTransition.screenShotIsIncludeNavigatebar = NO;
         
     } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
         

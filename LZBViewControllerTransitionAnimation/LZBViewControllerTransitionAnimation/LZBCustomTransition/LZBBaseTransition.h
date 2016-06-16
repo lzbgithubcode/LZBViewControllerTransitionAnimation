@@ -81,6 +81,11 @@ UINavigationControllerDelegate>           //导航代理协议- push/Pop
  */
 @property (nonatomic, assign) LZBBaseTransitionStyle  transitionType;
 
+/**
+ *  设置是否具有弹簧效果,默认是NO
+ */
+@property (nonatomic, assign) BOOL  bounceIsEnable;
+
 #pragma mark - 方法调用
 /**
  *  实例化方法 push - pop

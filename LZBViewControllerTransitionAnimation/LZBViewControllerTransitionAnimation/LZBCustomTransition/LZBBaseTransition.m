@@ -108,6 +108,7 @@
   {
       self.transitionType = kLZBBaseTransitionStyle_Push;
       self.duration = default_Duration;
+      self.bounceIsEnable = NO;
       
   }
     return self;
