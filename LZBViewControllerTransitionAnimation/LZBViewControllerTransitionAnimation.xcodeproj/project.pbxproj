@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187C95361D127B3E000B5964 /* LZBQQPhoneTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C95351D127B3E000B5964 /* LZBQQPhoneTransition.m */; };
+		187C95391D128323000B5964 /* oneQQPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C95381D128323000B5964 /* oneQQPhoneViewController.m */; };
+		187C953C1D128332000B5964 /* twoQQPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C953B1D128332000B5964 /* twoQQPhoneViewController.m */; };
+		187C953E1D12841C000B5964 /* QQPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 187C953D1D12841C000B5964 /* QQPhone@2x.png */; };
+		187C95401D128443000B5964 /* wechat_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 187C953F1D128443000B5964 /* wechat_main.png */; };
+		187C95421D12846B000B5964 /* QQ_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 187C95411D12846B000B5964 /* QQ_main.png */; };
 		188E14211D12468B00EBA390 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E14201D12468B00EBA390 /* main.m */; };
 		188E14241D12468B00EBA390 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E14231D12468B00EBA390 /* AppDelegate.m */; };
 		188E14271D12468B00EBA390 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E14261D12468B00EBA390 /* ViewController.m */; };
@@ -31,6 +37,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		187C95341D127B3E000B5964 /* LZBQQPhoneTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBQQPhoneTransition.h; sourceTree = "<group>"; };
+		187C95351D127B3E000B5964 /* LZBQQPhoneTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBQQPhoneTransition.m; sourceTree = "<group>"; };
+		187C95371D128323000B5964 /* oneQQPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneQQPhoneViewController.h; sourceTree = "<group>"; };
+		187C95381D128323000B5964 /* oneQQPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneQQPhoneViewController.m; sourceTree = "<group>"; };
+		187C953A1D128332000B5964 /* twoQQPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoQQPhoneViewController.h; sourceTree = "<group>"; };
+		187C953B1D128332000B5964 /* twoQQPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoQQPhoneViewController.m; sourceTree = "<group>"; };
+		187C953D1D12841C000B5964 /* QQPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQPhone@2x.png"; sourceTree = "<group>"; };
+		187C953F1D128443000B5964 /* wechat_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat_main.png; sourceTree = "<group>"; };
+		187C95411D12846B000B5964 /* QQ_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QQ_main.png; sourceTree = "<group>"; };
 		188E141C1D12468B00EBA390 /* LZBViewControllerTransitionAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZBViewControllerTransitionAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188E14201D12468B00EBA390 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		188E14221D12468B00EBA390 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +95,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187C95331D127B14000B5964 /* QQPhone */ = {
+			isa = PBXGroup;
+			children = (
+				187C95341D127B3E000B5964 /* LZBQQPhoneTransition.h */,
+				187C95351D127B3E000B5964 /* LZBQQPhoneTransition.m */,
+				187C95371D128323000B5964 /* oneQQPhoneViewController.h */,
+				187C95381D128323000B5964 /* oneQQPhoneViewController.m */,
+				187C953A1D128332000B5964 /* twoQQPhoneViewController.h */,
+				187C953B1D128332000B5964 /* twoQQPhoneViewController.m */,
+			);
+			path = QQPhone;
+			sourceTree = "<group>";
+		};
 		188E14131D12468B00EBA390 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +156,7 @@
 			children = (
 				188E143E1D1246AB00EBA390 /* LZBBaseTransition.h */,
 				188E143F1D1246AB00EBA390 /* LZBBaseTransition.m */,
+				187C95331D127B14000B5964 /* QQPhone */,
 				188E14371D1246AB00EBA390 /* CustomPresentDismiss */,
 				188E14401D1246AB00EBA390 /* PresentWithDismiss */,
 				188E14471D1246AB00EBA390 /* PushWithPop */,
@@ -178,6 +207,9 @@
 		188E145B1D1246BE00EBA390 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				187C95411D12846B000B5964 /* QQ_main.png */,
+				187C953F1D128443000B5964 /* wechat_main.png */,
+				187C953D1D12841C000B5964 /* QQPhone@2x.png */,
 				188E145C1D1246BE00EBA390 /* button.png */,
 				188E145D1D1246BE00EBA390 /* fengjin.png */,
 				188E145E1D1246BE00EBA390 /* tupain1.png */,
@@ -245,11 +277,14 @@
 			files = (
 				188E14621D1246BE00EBA390 /* tupain1.png in Resources */,
 				188E142F1D12468B00EBA390 /* LaunchScreen.storyboard in Resources */,
+				187C95421D12846B000B5964 /* QQ_main.png in Resources */,
 				188E14601D1246BE00EBA390 /* button.png in Resources */,
 				188E14611D1246BE00EBA390 /* fengjin.png in Resources */,
 				188E14631D1246BE00EBA390 /* tupain2.png in Resources */,
+				187C953E1D12841C000B5964 /* QQPhone@2x.png in Resources */,
 				188E142C1D12468B00EBA390 /* Assets.xcassets in Resources */,
 				188E142A1D12468B00EBA390 /* Main.storyboard in Resources */,
+				187C95401D128443000B5964 /* wechat_main.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +297,9 @@
 			files = (
 				188E14541D1246AB00EBA390 /* LZBPresentDismissTransition.m in Sources */,
 				188E14501D1246AB00EBA390 /* LZBCustomModalTransition.m in Sources */,
+				187C95391D128323000B5964 /* oneQQPhoneViewController.m in Sources */,
 				188E14511D1246AB00EBA390 /* oneCustomModalViewContoller.m in Sources */,
+				187C953C1D128332000B5964 /* twoQQPhoneViewController.m in Sources */,
 				188E14271D12468B00EBA390 /* ViewController.m in Sources */,
 				188E14551D1246AB00EBA390 /* OnePresentViewController.m in Sources */,
 				188E14561D1246AB00EBA390 /* TwoPresentViewController.m in Sources */,
@@ -271,6 +308,7 @@
 				188E14241D12468B00EBA390 /* AppDelegate.m in Sources */,
 				188E14531D1246AB00EBA390 /* LZBBaseTransition.m in Sources */,
 				188E14211D12468B00EBA390 /* main.m in Sources */,
+				187C95361D127B3E000B5964 /* LZBQQPhoneTransition.m in Sources */,
 				188E14571D1246AB00EBA390 /* LZBBaseViewController.m in Sources */,
 				188E14581D1246AB00EBA390 /* LZBPushPopTransition.m in Sources */,
 				188E14591D1246AB00EBA390 /* OneViewController.m in Sources */,
@@ -424,6 +462,7 @@
 				188E14351D12468B00EBA390 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

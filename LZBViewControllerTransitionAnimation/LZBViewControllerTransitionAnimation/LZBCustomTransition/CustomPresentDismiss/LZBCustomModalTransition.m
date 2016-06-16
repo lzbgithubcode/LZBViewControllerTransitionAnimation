@@ -51,7 +51,7 @@
         fromView.alpha = 0.0;
         
         //设置目的控制器的View
-        CGFloat height = self.toViewRequireHeight;
+        CGFloat height = 0;
         if(self.toViewRequireHeight > 0)
         {
             height = self.toViewRequireHeight;
@@ -88,7 +88,9 @@
             // damp是弹簧系数，velecity:弹簧速度
             [UIView animateWithDuration:self.duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                
-                fromTempView.transform = CGAffineTransformMakeScale(self.scale, self.scale);
+               fromTempView.transform = CGAffineTransformMakeScale(self.scale, self.scale);
+
+
                 
                 toView.transform = CGAffineTransformMakeTranslation(0, -height);
                 
