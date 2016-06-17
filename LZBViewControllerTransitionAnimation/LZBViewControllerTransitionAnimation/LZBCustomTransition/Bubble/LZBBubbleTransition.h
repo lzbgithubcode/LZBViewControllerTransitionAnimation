@@ -15,10 +15,7 @@
  */
 @property (nonatomic, strong) UIView *targetView;
 
-/**
- *  是否使能弹簧效果
- */
-@property (nonatomic, assign) BOOL bounceIsEnable;
+
 
 
 @end

@@ -15,7 +15,6 @@
  */
 @property (nonatomic, strong) id<UIViewControllerContextTransitioning>transitionContext;
 
-
 @end
 
 @implementation LZBQQPhoneTransition
@@ -121,10 +120,7 @@
        laryerAnimation.duration = 1.0;
        laryerAnimation.delegate = self;
        [maskLayer addAnimation:laryerAnimation forKey:@"path"];
-       
-       
        self.targetView.hidden = YES;
-      
        toVC.view.alpha = 1.0;
    }
   else
@@ -152,6 +148,7 @@
     
     UIView *fromView = [self fromView:transitionContext];
    
+    
     //创建变化的形状层
     CAShapeLayer *shapeMaskLayer = [CAShapeLayer layer];
     shapeMaskLayer.path = endCircle.CGPath;
@@ -173,24 +170,26 @@
 {
      if([[anim valueForKey:@"animation"] isEqualToString:@"dismissOneAnimation"])
      {
-         //取消fromView的形状层动画
-         [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
          UIView *fromView = [self fromView:self.transitionContext];
+         [fromView.layer.mask removeAllAnimations];
          fromView.layer.mask = nil;
          [fromView removeFromSuperview];
-        
+         //取消fromView的形状层动画
+         [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
+         
+
          //增加动画路径
-         CGPoint startPoint = fromView.center;
+         CGPoint startPoint = CGPointMake([UIScreen mainScreen].bounds.size.width * 0.5, [UIScreen mainScreen].bounds.size.height * 0.5);
          CGPoint endPoint = self.targetView.center;
          CGPoint controlPoint = CGPointMake(self.targetView.center.x, [UIScreen mainScreen].bounds.size.height * 0.5);
          UIBezierPath *animationPath = [[UIBezierPath alloc]init];
          [animationPath moveToPoint:startPoint];
          [animationPath addQuadCurveToPoint:endPoint controlPoint:controlPoint];
          
-          self.targetView.layer.transform = CATransform3DMakeScale(3, 3, 1);
+          self.targetView.layer.transform = CATransform3DMakeScale(self.scale, self.scale, 1);
          CAAnimationGroup *group = [self groupAnimationWithBezierPath:animationPath durationTime:1.0 transform:CATransform3DMakeScale(1.0, 1.0, 1)];
          group.removedOnCompletion = NO;
-         group.fillMode = kCAFillModeForwards;
+         group.fillMode = kCAFillModeRemoved;
          //用于后面找到这组动画
          [group setValue:@"twoDismissGroup" forKey:@"groupAnimation"];
          [self.targetView.layer addAnimation:group forKey:@"keyAniamition"];
@@ -201,10 +200,13 @@
      {
          [self.targetView.layer removeAllAnimations];
          self.targetView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1);
-         
+         self.transitionContext = nil;  //必须把上下文=nil，不让控制器不会销毁
+      
      }
   
 }
+
+
 
 
 #pragma mark - 动画组

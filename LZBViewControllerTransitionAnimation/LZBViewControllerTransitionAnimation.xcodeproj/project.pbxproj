@@ -10,6 +10,7 @@
 		18697A6F1D138DF200B1DDB0 /* LZBBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A6E1D138DF200B1DDB0 /* LZBBubbleTransition.m */; };
 		18697A721D138E1200B1DDB0 /* oneBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A711D138E1200B1DDB0 /* oneBubbleViewController.m */; };
 		18697A751D138E2500B1DDB0 /* twoBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A741D138E2500B1DDB0 /* twoBubbleViewController.m */; };
+		18697A771D13D2F500B1DDB0 /* QQphone2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18697A761D13D2F500B1DDB0 /* QQphone2.png */; };
 		187C95361D127B3E000B5964 /* LZBQQPhoneTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C95351D127B3E000B5964 /* LZBQQPhoneTransition.m */; };
 		187C95391D128323000B5964 /* oneQQPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C95381D128323000B5964 /* oneQQPhoneViewController.m */; };
 		187C953C1D128332000B5964 /* twoQQPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C953B1D128332000B5964 /* twoQQPhoneViewController.m */; };
@@ -46,6 +47,7 @@
 		18697A711D138E1200B1DDB0 /* oneBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneBubbleViewController.m; sourceTree = "<group>"; };
 		18697A731D138E2500B1DDB0 /* twoBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoBubbleViewController.h; sourceTree = "<group>"; };
 		18697A741D138E2500B1DDB0 /* twoBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoBubbleViewController.m; sourceTree = "<group>"; };
+		18697A761D13D2F500B1DDB0 /* QQphone2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QQphone2.png; path = ../Bubble/QQphone2.png; sourceTree = "<group>"; };
 		187C95341D127B3E000B5964 /* LZBQQPhoneTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBQQPhoneTransition.h; sourceTree = "<group>"; };
 		187C95351D127B3E000B5964 /* LZBQQPhoneTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBQQPhoneTransition.m; sourceTree = "<group>"; };
 		187C95371D128323000B5964 /* oneQQPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneQQPhoneViewController.h; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		188E145B1D1246BE00EBA390 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				18697A761D13D2F500B1DDB0 /* QQphone2.png */,
 				187C95411D12846B000B5964 /* QQ_main.png */,
 				187C953F1D128443000B5964 /* wechat_main.png */,
 				187C953D1D12841C000B5964 /* QQPhone@2x.png */,
@@ -300,6 +303,7 @@
 			files = (
 				188E14621D1246BE00EBA390 /* tupain1.png in Resources */,
 				188E142F1D12468B00EBA390 /* LaunchScreen.storyboard in Resources */,
+				18697A771D13D2F500B1DDB0 /* QQphone2.png in Resources */,
 				187C95421D12846B000B5964 /* QQ_main.png in Resources */,
 				188E14601D1246BE00EBA390 /* button.png in Resources */,
 				188E14611D1246BE00EBA390 /* fengjin.png in Resources */,

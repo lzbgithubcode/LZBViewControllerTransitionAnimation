@@ -41,18 +41,20 @@
 }
 - (void)presentButtonClick
 {
+    __weak typeof(self) weakSelf = self;
+    
     twoBubbleViewController *two = [[twoBubbleViewController alloc]init];
     two.modalPresentationStyle = UIModalPresentationCustom;
     self.bubbleTransition = [[LZBBubbleTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
         LZBBubbleTransition  *bubble = (LZBBubbleTransition *)transition;
         //设置动画的View
-        bubble.targetView = self.presentButton;
+        bubble.targetView = weakSelf.presentButton;
         //设置弹簧属性
         bubble.bounceIsEnable = YES;
     } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
         
     }];
-    two.transitioningDelegate = self.bubbleTransition;
+    two.transitioningDelegate = weakSelf.bubbleTransition;
     [self presentViewController:two animated:YES completion:nil];
 }
 @end

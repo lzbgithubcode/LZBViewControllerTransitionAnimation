@@ -56,9 +56,10 @@
 {
     twoQQPhoneViewController *twoVC = [[twoQQPhoneViewController alloc]init];
     twoVC.modalPresentationStyle =  UIModalPresentationCustom;
+    __weak typeof(self) weakSelf = self;
     self.QQPhoneTransition = [[LZBQQPhoneTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
         LZBQQPhoneTransition *modalQQ = (LZBQQPhoneTransition*)transition;
-        modalQQ.targetView = self.presentButton;
+        modalQQ.targetView = weakSelf.presentButton;
         
     } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
         

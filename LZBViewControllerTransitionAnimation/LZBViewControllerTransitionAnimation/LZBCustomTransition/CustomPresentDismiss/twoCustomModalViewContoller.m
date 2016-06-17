@@ -31,4 +31,10 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)dealloc
+{
+    NSLog(@"销毁---twoCustomModalViewContoller");
+}
+
 @end
