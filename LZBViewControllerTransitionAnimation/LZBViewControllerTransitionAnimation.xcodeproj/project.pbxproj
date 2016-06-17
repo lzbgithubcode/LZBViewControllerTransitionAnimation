@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18697A6F1D138DF200B1DDB0 /* LZBBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A6E1D138DF200B1DDB0 /* LZBBubbleTransition.m */; };
+		18697A721D138E1200B1DDB0 /* oneBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A711D138E1200B1DDB0 /* oneBubbleViewController.m */; };
+		18697A751D138E2500B1DDB0 /* twoBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A741D138E2500B1DDB0 /* twoBubbleViewController.m */; };
 		187C95361D127B3E000B5964 /* LZBQQPhoneTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C95351D127B3E000B5964 /* LZBQQPhoneTransition.m */; };
 		187C95391D128323000B5964 /* oneQQPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C95381D128323000B5964 /* oneQQPhoneViewController.m */; };
 		187C953C1D128332000B5964 /* twoQQPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C953B1D128332000B5964 /* twoQQPhoneViewController.m */; };
@@ -37,6 +40,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18697A6D1D138DF200B1DDB0 /* LZBBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBBubbleTransition.h; sourceTree = "<group>"; };
+		18697A6E1D138DF200B1DDB0 /* LZBBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBBubbleTransition.m; sourceTree = "<group>"; };
+		18697A701D138E1200B1DDB0 /* oneBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneBubbleViewController.h; sourceTree = "<group>"; };
+		18697A711D138E1200B1DDB0 /* oneBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneBubbleViewController.m; sourceTree = "<group>"; };
+		18697A731D138E2500B1DDB0 /* twoBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoBubbleViewController.h; sourceTree = "<group>"; };
+		18697A741D138E2500B1DDB0 /* twoBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoBubbleViewController.m; sourceTree = "<group>"; };
 		187C95341D127B3E000B5964 /* LZBQQPhoneTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBQQPhoneTransition.h; sourceTree = "<group>"; };
 		187C95351D127B3E000B5964 /* LZBQQPhoneTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBQQPhoneTransition.m; sourceTree = "<group>"; };
 		187C95371D128323000B5964 /* oneQQPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneQQPhoneViewController.h; sourceTree = "<group>"; };
@@ -95,6 +104,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18697A6C1D138DCD00B1DDB0 /* Bubble */ = {
+			isa = PBXGroup;
+			children = (
+				18697A6D1D138DF200B1DDB0 /* LZBBubbleTransition.h */,
+				18697A6E1D138DF200B1DDB0 /* LZBBubbleTransition.m */,
+				18697A701D138E1200B1DDB0 /* oneBubbleViewController.h */,
+				18697A711D138E1200B1DDB0 /* oneBubbleViewController.m */,
+				18697A731D138E2500B1DDB0 /* twoBubbleViewController.h */,
+				18697A741D138E2500B1DDB0 /* twoBubbleViewController.m */,
+			);
+			path = Bubble;
+			sourceTree = "<group>";
+		};
 		187C95331D127B14000B5964 /* QQPhone */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +178,7 @@
 			children = (
 				188E143E1D1246AB00EBA390 /* LZBBaseTransition.h */,
 				188E143F1D1246AB00EBA390 /* LZBBaseTransition.m */,
+				18697A6C1D138DCD00B1DDB0 /* Bubble */,
 				187C95331D127B14000B5964 /* QQPhone */,
 				188E14371D1246AB00EBA390 /* CustomPresentDismiss */,
 				188E14401D1246AB00EBA390 /* PresentWithDismiss */,
@@ -298,9 +321,12 @@
 				188E14541D1246AB00EBA390 /* LZBPresentDismissTransition.m in Sources */,
 				188E14501D1246AB00EBA390 /* LZBCustomModalTransition.m in Sources */,
 				187C95391D128323000B5964 /* oneQQPhoneViewController.m in Sources */,
+				18697A6F1D138DF200B1DDB0 /* LZBBubbleTransition.m in Sources */,
 				188E14511D1246AB00EBA390 /* oneCustomModalViewContoller.m in Sources */,
+				18697A751D138E2500B1DDB0 /* twoBubbleViewController.m in Sources */,
 				187C953C1D128332000B5964 /* twoQQPhoneViewController.m in Sources */,
 				188E14271D12468B00EBA390 /* ViewController.m in Sources */,
+				18697A721D138E1200B1DDB0 /* oneBubbleViewController.m in Sources */,
 				188E14551D1246AB00EBA390 /* OnePresentViewController.m in Sources */,
 				188E14561D1246AB00EBA390 /* TwoPresentViewController.m in Sources */,
 				188E14521D1246AB00EBA390 /* twoCustomModalViewContoller.m in Sources */,

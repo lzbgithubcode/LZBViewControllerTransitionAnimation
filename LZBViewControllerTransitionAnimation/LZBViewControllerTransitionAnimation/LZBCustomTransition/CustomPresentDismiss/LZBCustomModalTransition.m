@@ -89,9 +89,6 @@
             [UIView animateWithDuration:self.duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                
                fromTempView.transform = CGAffineTransformMakeScale(self.scale, self.scale);
-
-
-                
                 toView.transform = CGAffineTransformMakeTranslation(0, -height);
                 
             } completion:^(BOOL finished) {

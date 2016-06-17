@@ -63,14 +63,13 @@
 - (void)animationPresentTrasition:(id<UIViewControllerContextTransitioning>)transitionContext WithContainerView:(UIView *)containerView
 {
     UIView *toView = [self toView:transitionContext];
-    UIView *fromView = [self fromView:transitionContext];
+   // UIView *fromView = [self fromView:transitionContext];
     
-    [containerView addSubview:fromView];
+   // [containerView addSubview:fromView];
     [containerView addSubview:toView];
     
     
-    toView.alpha = 0.0;
-    
+     toView.alpha = 0.0;
     //画移动曲线
     CGPoint startPoint = self.targetView.center;
     CGPoint endPoint = toView.center;
@@ -86,7 +85,7 @@
     //用于后面找到这组动画
     [group setValue:@"onePresentGroup" forKey:@"groupAnimation"];
     [self.targetView.layer addAnimation:group forKey:@"keyAniamition"];
-
+    
 }
 /**
  *  监听present第一组动画
@@ -124,7 +123,7 @@
        laryerAnimation.duration = 1.0;
        laryerAnimation.delegate = self;
        
-       [laryerAnimation setValue:@"twoPrensentAniamation" forKey:@"laryerAnimation"];
+      // [laryerAnimation setValue:@"twoPrensentAniamation" forKey:@"laryerAnimation"];
        [maskLayer addAnimation:laryerAnimation forKey:@"path"];
        
        
@@ -134,6 +133,7 @@
   else
     {
        // present第二次动画来到这里 代理回调再次执行到这里结束动画
+
        [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
         toVC.view.layer.mask = nil;
         
@@ -144,10 +144,7 @@
 #pragma mark - dismiss动画
 - (void)animationDismissTrasition:(id<UIViewControllerContextTransitioning>)transitionContext WithContainerView:(UIView *)containerView
 {
-//    UIView *toView = [self toView:transitionContext];
-//     toView.alpha = 0.0;
-    
-    
+
    //先画两个动画圆
     //求出半径
     CGFloat radius = sqrtf(containerView.frame.size.height *containerView.frame.size.height + containerView.frame.size.width *containerView.frame.size.width)*0.5;
