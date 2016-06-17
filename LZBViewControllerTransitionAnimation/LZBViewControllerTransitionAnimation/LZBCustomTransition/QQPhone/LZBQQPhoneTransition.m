@@ -63,13 +63,9 @@
 - (void)animationPresentTrasition:(id<UIViewControllerContextTransitioning>)transitionContext WithContainerView:(UIView *)containerView
 {
     UIView *toView = [self toView:transitionContext];
-   // UIView *fromView = [self fromView:transitionContext];
-    
-   // [containerView addSubview:fromView];
-    [containerView addSubview:toView];
-    
-    
      toView.alpha = 0.0;
+     [containerView addSubview:toView];
+    
     //画移动曲线
     CGPoint startPoint = self.targetView.center;
     CGPoint endPoint = toView.center;
@@ -78,6 +74,7 @@
     [animationPath moveToPoint:startPoint];
     [animationPath addQuadCurveToPoint:endPoint controlPoint:controlPoint];
     
+   
     //增加动画
     CAAnimationGroup *group = [self groupAnimationWithBezierPath:animationPath durationTime:1.0 transform:CATransform3DMakeScale(self.scale, self.scale, 1)];
     group.removedOnCompletion = NO;
@@ -85,6 +82,7 @@
     //用于后面找到这组动画
     [group setValue:@"onePresentGroup" forKey:@"groupAnimation"];
     [self.targetView.layer addAnimation:group forKey:@"keyAniamition"];
+    
     
 }
 /**
@@ -122,19 +120,17 @@
        laryerAnimation.toValue =(__bridge id )endCircle.CGPath;
        laryerAnimation.duration = 1.0;
        laryerAnimation.delegate = self;
-       
-      // [laryerAnimation setValue:@"twoPrensentAniamation" forKey:@"laryerAnimation"];
        [maskLayer addAnimation:laryerAnimation forKey:@"path"];
        
        
        self.targetView.hidden = YES;
+      
        toVC.view.alpha = 1.0;
    }
   else
     {
        // present第二次动画来到这里 代理回调再次执行到这里结束动画
-
-       [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
+        [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
         toVC.view.layer.mask = nil;
         
 
@@ -155,7 +151,7 @@
     UIBezierPath *endCircle = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(([UIScreen mainScreen].bounds.size.width - self.targetView.frame.size.width * self.scale)*0.5, ([UIScreen mainScreen].bounds.size.height  - self.targetView.frame.size.height * self.scale)*0.5 , self.targetView.frame.size.width*self.scale, self.targetView.frame.size.height*self.scale)];
     
     UIView *fromView = [self fromView:transitionContext];
-    //UIView *toView = [self toView:transitionContext];
+   
     //创建变化的形状层
     CAShapeLayer *shapeMaskLayer = [CAShapeLayer layer];
     shapeMaskLayer.path = endCircle.CGPath;
@@ -181,10 +177,10 @@
          [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
          UIView *fromView = [self fromView:self.transitionContext];
          fromView.layer.mask = nil;
+         [fromView removeFromSuperview];
         
          //增加动画路径
-         UIView *toView = [self toView:self.transitionContext];
-         CGPoint startPoint = toView.center;
+         CGPoint startPoint = fromView.center;
          CGPoint endPoint = self.targetView.center;
          CGPoint controlPoint = CGPointMake(self.targetView.center.x, [UIScreen mainScreen].bounds.size.height * 0.5);
          UIBezierPath *animationPath = [[UIBezierPath alloc]init];
@@ -199,7 +195,7 @@
          [group setValue:@"twoDismissGroup" forKey:@"groupAnimation"];
          [self.targetView.layer addAnimation:group forKey:@"keyAniamition"];
          self.targetView.hidden = NO;
-         toView.alpha = 1.0;
+       
      }
      else
      {

@@ -28,7 +28,7 @@
 {
     self.presentButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:self.presentButton];
-    self.presentButton.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height - 50);
+    self.presentButton.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height*0.5);
     self.presentButton.bounds = CGRectMake(0, 0, 50, 50);
     self.presentButton.layer.cornerRadius = 25;
     self.presentButton.layer.masksToBounds = YES;
@@ -45,8 +45,10 @@
     two.modalPresentationStyle = UIModalPresentationCustom;
     self.bubbleTransition = [[LZBBubbleTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
         LZBBubbleTransition  *bubble = (LZBBubbleTransition *)transition;
+        //设置动画的View
         bubble.targetView = self.presentButton;
-        
+        //设置弹簧属性
+        bubble.bounceIsEnable = YES;
     } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
         
     }];
