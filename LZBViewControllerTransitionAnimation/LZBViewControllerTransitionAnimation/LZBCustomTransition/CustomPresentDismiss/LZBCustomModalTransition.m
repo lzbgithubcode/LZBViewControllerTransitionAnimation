@@ -42,11 +42,15 @@
         //如果有临时的View,那么FromView就没有什么用
         UIView *fromTempView = nil;
         if([self screenShotIsIncludeNavigatebar])
-            fromTempView = [[UIScreen mainScreen] snapshotViewAfterScreenUpdates:NO];
+        {
+           fromTempView = [[UIScreen mainScreen] snapshotViewAfterScreenUpdates:NO];
+            fromTempView.frame = [UIScreen mainScreen].bounds;
+        }
         else
-            fromTempView = [fromView snapshotViewAfterScreenUpdates:NO];
-        
-        fromTempView.frame = fromView.frame;
+        {
+           fromTempView = [fromView snapshotViewAfterScreenUpdates:NO];
+           fromTempView.frame = fromView.frame;
+        }
         [containerView addSubview:fromTempView];
         fromView.alpha = 0.0;
         
@@ -62,13 +66,9 @@
         toView.frame = CGRectMake(toView.frame.origin.x, fromView.frame.size.height, toView.frame.size.width, height);
         [containerView addSubview:toView];
         
-        
-
         //增加手势在后面的View上面
          self.fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
         [fromTempView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(fromTempViewClick)]];
-        
-        
         
         //增加动画效果
          if(self.bounceIsEnable ==NO)
@@ -97,10 +97,6 @@
             }];
             
         }
-        
-      
-        
-        
     }
     else
     {
@@ -136,9 +132,7 @@
             }];
 
         }
-        
-        
-        
+  
     }
     
 }

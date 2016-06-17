@@ -11,6 +11,9 @@
 		18697A721D138E1200B1DDB0 /* oneBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A711D138E1200B1DDB0 /* oneBubbleViewController.m */; };
 		18697A751D138E2500B1DDB0 /* twoBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A741D138E2500B1DDB0 /* twoBubbleViewController.m */; };
 		18697A771D13D2F500B1DDB0 /* QQphone2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18697A761D13D2F500B1DDB0 /* QQphone2.png */; };
+		18697A7B1D13E71300B1DDB0 /* LZBPageTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A7A1D13E71300B1DDB0 /* LZBPageTransition.m */; };
+		18697A7E1D13E73800B1DDB0 /* onePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A7D1D13E73800B1DDB0 /* onePageViewController.m */; };
+		18697A811D13E74600B1DDB0 /* twoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A801D13E74600B1DDB0 /* twoPageViewController.m */; };
 		187C95361D127B3E000B5964 /* LZBQQPhoneTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C95351D127B3E000B5964 /* LZBQQPhoneTransition.m */; };
 		187C95391D128323000B5964 /* oneQQPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C95381D128323000B5964 /* oneQQPhoneViewController.m */; };
 		187C953C1D128332000B5964 /* twoQQPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C953B1D128332000B5964 /* twoQQPhoneViewController.m */; };
@@ -48,6 +51,12 @@
 		18697A731D138E2500B1DDB0 /* twoBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoBubbleViewController.h; sourceTree = "<group>"; };
 		18697A741D138E2500B1DDB0 /* twoBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoBubbleViewController.m; sourceTree = "<group>"; };
 		18697A761D13D2F500B1DDB0 /* QQphone2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QQphone2.png; path = ../Bubble/QQphone2.png; sourceTree = "<group>"; };
+		18697A791D13E71300B1DDB0 /* LZBPageTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBPageTransition.h; sourceTree = "<group>"; };
+		18697A7A1D13E71300B1DDB0 /* LZBPageTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBPageTransition.m; sourceTree = "<group>"; };
+		18697A7C1D13E73800B1DDB0 /* onePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = onePageViewController.h; sourceTree = "<group>"; };
+		18697A7D1D13E73800B1DDB0 /* onePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = onePageViewController.m; sourceTree = "<group>"; };
+		18697A7F1D13E74600B1DDB0 /* twoPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoPageViewController.h; sourceTree = "<group>"; };
+		18697A801D13E74600B1DDB0 /* twoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoPageViewController.m; sourceTree = "<group>"; };
 		187C95341D127B3E000B5964 /* LZBQQPhoneTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBQQPhoneTransition.h; sourceTree = "<group>"; };
 		187C95351D127B3E000B5964 /* LZBQQPhoneTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBQQPhoneTransition.m; sourceTree = "<group>"; };
 		187C95371D128323000B5964 /* oneQQPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneQQPhoneViewController.h; sourceTree = "<group>"; };
@@ -106,7 +115,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18697A6C1D138DCD00B1DDB0 /* Bubble */ = {
+		18697A6C1D138DCD00B1DDB0 /* Bubble(气泡) */ = {
 			isa = PBXGroup;
 			children = (
 				18697A6D1D138DF200B1DDB0 /* LZBBubbleTransition.h */,
@@ -116,10 +125,24 @@
 				18697A731D138E2500B1DDB0 /* twoBubbleViewController.h */,
 				18697A741D138E2500B1DDB0 /* twoBubbleViewController.m */,
 			);
+			name = "Bubble(气泡)";
 			path = Bubble;
 			sourceTree = "<group>";
 		};
-		187C95331D127B14000B5964 /* QQPhone */ = {
+		18697A781D13E6EE00B1DDB0 /* Page(翻页转场) */ = {
+			isa = PBXGroup;
+			children = (
+				18697A791D13E71300B1DDB0 /* LZBPageTransition.h */,
+				18697A7A1D13E71300B1DDB0 /* LZBPageTransition.m */,
+				18697A7C1D13E73800B1DDB0 /* onePageViewController.h */,
+				18697A7D1D13E73800B1DDB0 /* onePageViewController.m */,
+				18697A7F1D13E74600B1DDB0 /* twoPageViewController.h */,
+				18697A801D13E74600B1DDB0 /* twoPageViewController.m */,
+			);
+			path = "Page(翻页转场)";
+			sourceTree = "<group>";
+		};
+		187C95331D127B14000B5964 /* QQPhone（高仿QQ电话） */ = {
 			isa = PBXGroup;
 			children = (
 				187C95341D127B3E000B5964 /* LZBQQPhoneTransition.h */,
@@ -129,6 +152,7 @@
 				187C953A1D128332000B5964 /* twoQQPhoneViewController.h */,
 				187C953B1D128332000B5964 /* twoQQPhoneViewController.m */,
 			);
+			name = "QQPhone（高仿QQ电话）";
 			path = QQPhone;
 			sourceTree = "<group>";
 		};
@@ -180,9 +204,10 @@
 			children = (
 				188E143E1D1246AB00EBA390 /* LZBBaseTransition.h */,
 				188E143F1D1246AB00EBA390 /* LZBBaseTransition.m */,
-				18697A6C1D138DCD00B1DDB0 /* Bubble */,
-				187C95331D127B14000B5964 /* QQPhone */,
-				188E14371D1246AB00EBA390 /* CustomPresentDismiss */,
+				18697A781D13E6EE00B1DDB0 /* Page(翻页转场) */,
+				18697A6C1D138DCD00B1DDB0 /* Bubble(气泡) */,
+				187C95331D127B14000B5964 /* QQPhone（高仿QQ电话） */,
+				188E14371D1246AB00EBA390 /* CustomPresentDismiss（自定义模态） */,
 				188E14401D1246AB00EBA390 /* PresentWithDismiss */,
 				188E14471D1246AB00EBA390 /* PushWithPop */,
 				188E145B1D1246BE00EBA390 /* Resource */,
@@ -190,7 +215,7 @@
 			path = LZBCustomTransition;
 			sourceTree = "<group>";
 		};
-		188E14371D1246AB00EBA390 /* CustomPresentDismiss */ = {
+		188E14371D1246AB00EBA390 /* CustomPresentDismiss（自定义模态） */ = {
 			isa = PBXGroup;
 			children = (
 				188E14381D1246AB00EBA390 /* LZBCustomModalTransition.h */,
@@ -200,6 +225,7 @@
 				188E143C1D1246AB00EBA390 /* twoCustomModalViewContoller.h */,
 				188E143D1D1246AB00EBA390 /* twoCustomModalViewContoller.m */,
 			);
+			name = "CustomPresentDismiss（自定义模态）";
 			path = CustomPresentDismiss;
 			sourceTree = "<group>";
 		};
@@ -338,10 +364,13 @@
 				188E14241D12468B00EBA390 /* AppDelegate.m in Sources */,
 				188E14531D1246AB00EBA390 /* LZBBaseTransition.m in Sources */,
 				188E14211D12468B00EBA390 /* main.m in Sources */,
+				18697A811D13E74600B1DDB0 /* twoPageViewController.m in Sources */,
 				187C95361D127B3E000B5964 /* LZBQQPhoneTransition.m in Sources */,
 				188E14571D1246AB00EBA390 /* LZBBaseViewController.m in Sources */,
 				188E14581D1246AB00EBA390 /* LZBPushPopTransition.m in Sources */,
 				188E14591D1246AB00EBA390 /* OneViewController.m in Sources */,
+				18697A7E1D13E73800B1DDB0 /* onePageViewController.m in Sources */,
+				18697A7B1D13E71300B1DDB0 /* LZBPageTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
