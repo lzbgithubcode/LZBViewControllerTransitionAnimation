@@ -31,7 +31,7 @@
 {
     self.imageView = [UIImageView new];
     [self.view addSubview:self.imageView];
-    self.imageView.image = [UIImage imageNamed:@"QQ_main"];
+    self.imageView.image = [UIImage imageNamed:@"meinv1"];
     self.imageView.frame =CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
     self.imageView.userInteractionEnabled = YES;
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;

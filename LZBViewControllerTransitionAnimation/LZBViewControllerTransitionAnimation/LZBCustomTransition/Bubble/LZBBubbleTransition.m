@@ -58,7 +58,7 @@
     __weak  typeof(self) weakself = self;
     if([self bounceIsEnable])
     {
-      [UIView animateWithDuration:self.duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+      [UIView animateWithDuration:2.0 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
           weakself.transitionView.transform = CGAffineTransformIdentity;
           toView.transform = CGAffineTransformIdentity;
           toView.alpha =1.0;
@@ -69,7 +69,7 @@
     }
     else
     {
-        [UIView animateWithDuration:self.duration animations:^{
+        [UIView animateWithDuration:2.0 animations:^{
             weakself.transitionView.transform = CGAffineTransformIdentity;
             toView.transform = CGAffineTransformIdentity;
             toView.alpha =1.0;
@@ -97,7 +97,7 @@
     __weak typeof(self) weakSelf = self;
     if([self bounceIsEnable])
     {
-      [UIView animateWithDuration:self.duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:2.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+      [UIView animateWithDuration:self.duration delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:2.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
           weakSelf.transitionView.transform = CGAffineTransformMakeScale(0.001, 0.001);
           fromView.transform =CGAffineTransformMakeScale(0.001, 0.001);
           fromView.alpha = 0.0;

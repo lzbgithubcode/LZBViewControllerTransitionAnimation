@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18574C051D158589006E8E5E /* meinv2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18574C041D158589006E8E5E /* meinv2.png */; };
+		18574C071D158594006E8E5E /* meinv1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18574C061D158594006E8E5E /* meinv1.png */; };
 		18697A6F1D138DF200B1DDB0 /* LZBBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A6E1D138DF200B1DDB0 /* LZBBubbleTransition.m */; };
 		18697A721D138E1200B1DDB0 /* oneBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A711D138E1200B1DDB0 /* oneBubbleViewController.m */; };
 		18697A751D138E2500B1DDB0 /* twoBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18697A741D138E2500B1DDB0 /* twoBubbleViewController.m */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18574C041D158589006E8E5E /* meinv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meinv2.png; sourceTree = "<group>"; };
+		18574C061D158594006E8E5E /* meinv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meinv1.png; sourceTree = "<group>"; };
 		18697A6D1D138DF200B1DDB0 /* LZBBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBBubbleTransition.h; sourceTree = "<group>"; };
 		18697A6E1D138DF200B1DDB0 /* LZBBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBBubbleTransition.m; sourceTree = "<group>"; };
 		18697A701D138E1200B1DDB0 /* oneBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneBubbleViewController.h; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 		188E145B1D1246BE00EBA390 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				18574C061D158594006E8E5E /* meinv1.png */,
+				18574C041D158589006E8E5E /* meinv2.png */,
 				18697A761D13D2F500B1DDB0 /* QQphone2.png */,
 				187C95411D12846B000B5964 /* QQ_main.png */,
 				187C953F1D128443000B5964 /* wechat_main.png */,
@@ -328,11 +334,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				188E14621D1246BE00EBA390 /* tupain1.png in Resources */,
+				18574C071D158594006E8E5E /* meinv1.png in Resources */,
 				188E142F1D12468B00EBA390 /* LaunchScreen.storyboard in Resources */,
 				18697A771D13D2F500B1DDB0 /* QQphone2.png in Resources */,
 				187C95421D12846B000B5964 /* QQ_main.png in Resources */,
 				188E14601D1246BE00EBA390 /* button.png in Resources */,
 				188E14611D1246BE00EBA390 /* fengjin.png in Resources */,
+				18574C051D158589006E8E5E /* meinv2.png in Resources */,
 				188E14631D1246BE00EBA390 /* tupain2.png in Resources */,
 				187C953E1D12841C000B5964 /* QQPhone@2x.png in Resources */,
 				188E142C1D12468B00EBA390 /* Assets.xcassets in Resources */,

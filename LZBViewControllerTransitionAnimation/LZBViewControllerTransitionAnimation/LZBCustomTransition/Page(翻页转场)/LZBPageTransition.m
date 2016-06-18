@@ -83,16 +83,17 @@
          [self addGradientLayerToView:toView WithAlpha:1.0];
      }
      __weak typeof(self) weakSelf = self;
-     [UIView animateWithDuration:3.0 animations:^{
+     [UIView animateWithDuration:2.0 animations:^{
          weakSelf.transitonView.layer.transform = CATransform3DMakeRotation(M_PI_2, 0, 1, 0);
-         toView.alpha = 1.0;
+        
          if([weakSelf shadowIsEnable])
          {
              weakSelf.transitonView.subviews.lastObject.alpha = 1.0;
              toView.subviews.lastObject.alpha = 0.0;
          }
-        
+         toView.alpha = 1.0;
      } completion:^(BOOL finished) {
+         
          [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
      }];
 }

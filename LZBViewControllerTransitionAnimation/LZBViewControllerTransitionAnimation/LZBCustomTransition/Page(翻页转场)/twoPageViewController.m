@@ -23,7 +23,7 @@
 {
     self.imageView = [UIImageView new];
     [self.view addSubview:self.imageView];
-    self.imageView.image = [UIImage imageNamed:@"wechat_main"];
+    self.imageView.image = [UIImage imageNamed:@"meinv2"];
     self.imageView.frame =CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height );
     self.imageView.userInteractionEnabled = YES;
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
