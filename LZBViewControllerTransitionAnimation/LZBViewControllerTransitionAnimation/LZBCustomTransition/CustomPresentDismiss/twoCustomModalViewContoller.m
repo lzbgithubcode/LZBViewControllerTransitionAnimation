@@ -20,7 +20,7 @@
     [super viewDidLoad];
     self.imageView = [UIImageView new];
     [self.view addSubview:self.imageView];
-    self.imageView.image = [UIImage imageNamed:@"tupain1"];
+    self.imageView.image = [UIImage imageNamed:@"tupain2"];
     self.imageView.frame = self.view.bounds;
     self.imageView.userInteractionEnabled = YES;
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
