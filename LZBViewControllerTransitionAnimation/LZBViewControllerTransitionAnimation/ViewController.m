@@ -28,7 +28,7 @@
     [super viewDidLoad];
     self.title = @"选择转场动画效果";
     self.tableView.backgroundColor =[UIColor whiteColor];
-    self.animationTypeVC = @[[[OnePresentViewController alloc]initWithTitle:@"modal模态转场动画"],[[OneViewController alloc] initWithTitle:@"push导航转场动画"],[[oneCustomModalViewContoller alloc]initWithTitle:@"自定义modal"],[[oneQQPhoneViewController alloc]initWithTitle:@"高仿QQ电话启动"],[[oneBubbleViewController alloc]initWithTitle:@"气泡转场效果"],[[onePageViewController alloc]initWithTitle:@"翻页转场效果"]];
+    self.animationTypeVC = @[[[OnePresentViewController alloc]initWithTitle:@"模仿系统modal模态转场动画"],[[OneViewController alloc] initWithTitle:@"模仿系统push导航转场动画"],[[oneCustomModalViewContoller alloc]initWithTitle:@"自定义modal"],[[oneQQPhoneViewController alloc]initWithTitle:@"高仿QQ电话启动"],[[oneBubbleViewController alloc]initWithTitle:@"气泡转场效果"],[[onePageViewController alloc]initWithTitle:@"翻页转场效果"]];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
