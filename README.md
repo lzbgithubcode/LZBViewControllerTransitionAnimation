@@ -4,11 +4,17 @@
 #整体结构
 封装一个基本转场动画的公共父LZBBaseTransition.h,用于实现一些基本共同的操作
 以及封装block回调,子类继承LZBBaseTransition，重写- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext实现动画效果
+
  LZBPageTransition.h   翻页效果
+ 
  LZBBubbleTransition.h   气泡效果
+ 
  LZBQQPhoneTransition.h   模拟QQ电话
+ 
  LZBCustomModalTransition.h   自定义模态动画
+ 
  LZBPresentDismissTransition.h  模拟系统的模态动画
+ 
  LZBPushPopTransition.h  模拟系统的导航切换动画
 
 #使用方法
