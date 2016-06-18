@@ -2,7 +2,7 @@
 模仿系统的push/pop动画和modal模态控制器动画，以及自定义各种转场动画
 
 #整体结构
-封装一个基本转场动画的公共父类#import "LZBBaseTransition.h",用于实现一些基本共同的操作
+封装一个基本转场动画的公共父LZBBaseTransition.h,用于实现一些基本共同的操作
 以及封装block回调,子类继承LZBBaseTransition，重写- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext实现动画效果
  LZBPageTransition.h   翻页效果
  LZBBubbleTransition.h   气泡效果
@@ -12,7 +12,8 @@
  LZBPushPopTransition.h  模拟系统的导航切换动画
 
 #使用方法
-需要使用什么动画可以直接导入头文件，创建转场动画,比如:要使用QQ电话的转场，使用步骤
+需要使用什么动画可以直接导入头文件并创建转场动画
+比如:要使用QQ电话的转场，使用步骤
 1.#import "LZBQQPhoneTransition.h"
 
 2.创建转场动画对象
