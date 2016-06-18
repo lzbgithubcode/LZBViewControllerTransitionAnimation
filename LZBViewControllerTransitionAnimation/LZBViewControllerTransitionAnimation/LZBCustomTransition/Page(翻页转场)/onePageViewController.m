@@ -44,18 +44,19 @@
     self.presentButton.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height*0.5);
     self.presentButton.bounds = CGRectMake(0, 0, 200, 50);
     self.presentButton.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
-    [self.presentButton setTitle:@"点我下一张" forState:UIControlStateNormal];
+    [self.presentButton setTitle:@"点我是下一张哦" forState:UIControlStateNormal];
     self.presentButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.presentButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.presentButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.presentButton addTarget:self action:@selector(presentButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
 }
 - (void)presentButtonClick
 {
-    __weak typeof(self) weakSelf = self;
+ 
     twoPageViewController *two = [[twoPageViewController alloc]init];
     self.pageTransition = [[LZBPageTransition alloc]initWithPush:^(UIViewController *fromVC, UIViewController *toVC, LZBBaseTransition *transition) {
-        
+        LZBPageTransition *page = (LZBPageTransition*)transition;
+        page.screenShotIsIncludeNavigatebar = YES;
         
     } Pop:^(UIViewController *fromVC, UIViewController *toVC, LZBBaseTransition *transition) {
         

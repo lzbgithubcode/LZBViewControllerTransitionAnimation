@@ -20,6 +20,15 @@
 @end
 
 @implementation LZBPageTransition
+- (instancetype)initWithPush:(LZBBaseTransitionPush)pushCallBack Pop:(LZBBaseTransitionPop)popCallBack
+{
+  if(self = [super initWithPush:pushCallBack Pop:popCallBack])
+  {
+      self.shadowIsEnable = NO;
+  }
+    return self;
+}
+
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIView *containerView = [transitionContext containerView];
@@ -54,48 +63,56 @@
     
     
     UIView *toView = [self toView:transitionContext];
+     toView.alpha = 0.0;
     [containerView addSubview:toView];
-    toView.alpha = 0.0;
+   
+   
     [self setAnchorPoint:CGPointMake(0, 0.5) WithView:self.transitonView];
     
     //动画效果  用CATransition不能实现动画效果，个人觉得是同样是转场动画，不能执行
    // [self transitionWithType:kCATransitionReveal WithSubType:kCATransitionFromRight ToView:self.transitonView];
   
     CATransform3D transfrom3d = CATransform3DIdentity;
-    transfrom3d.m34 = 0.001; //设置z轴参数
+    transfrom3d.m34 = 0.002; //设置z轴参数
     containerView.layer.sublayerTransform = transfrom3d;
     
     //是否增加阴影
      if([self shadowIsEnable])
      {
-         [self addGradientLayerToView:self.transitonView];
+         [self addGradientLayerToView:self.transitonView WithAlpha:0.0];
+         [self addGradientLayerToView:toView WithAlpha:1.0];
      }
-    
+     __weak typeof(self) weakSelf = self;
      [UIView animateWithDuration:3.0 animations:^{
-         self.transitonView.layer.transform = CATransform3DMakeRotation(M_PI * 0.5, 0, 1, 0);
+         weakSelf.transitonView.layer.transform = CATransform3DMakeRotation(M_PI_2, 0, 1, 0);
          toView.alpha = 1.0;
+         if([weakSelf shadowIsEnable])
+         {
+             weakSelf.transitonView.subviews.lastObject.alpha = 1.0;
+             toView.subviews.lastObject.alpha = 0.0;
+         }
         
      } completion:^(BOOL finished) {
-         toView.alpha = 1.0;
-        // [self.transitonView removeFromSuperview];
-         [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
+         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
      }];
 }
 
 - (void)animationPopTrasition:(id<UIViewControllerContextTransitioning>)transitionContext WithContainerView:(UIView *)containerView
 {
-    UIView *toView = [self toView:transitionContext];
+     UIView *toView = [self toView:transitionContext];
     [containerView addSubview:toView];
-    
-    
+ 
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:self.duration animations:^{
-      self.transitonView.layer.transform = CATransform3DIdentity;
-        containerView.layer.sublayerTransform = CATransform3DIdentity;
+     weakSelf.transitonView.layer.transform = CATransform3DIdentity;
+       toView.alpha =1.0;
     } completion:^(BOOL finished) {
-         toView.alpha =1.0;
-        [self.transitonView removeFromSuperview];
-        self.transitionContext = nil;
-        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        
+     [weakSelf.transitonView removeFromSuperview];
+     weakSelf.transitionContext = nil;
+     
+     [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+       
     }];
 }
 
@@ -124,19 +141,19 @@
 /**
  *  增加阴影效果在View上面
  */
-- (void)addGradientLayerToView:(UIView *)view
+- (void)addGradientLayerToView:(UIView *)view WithAlpha:(CGFloat)alpha
 {
     //增加阴影
-    CAGradientLayer *fromGradient = [CAGradientLayer layer];
-    fromGradient.frame = view.bounds;
-    fromGradient.colors = @[(id)[UIColor blackColor].CGColor,
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = view.bounds;
+    gradient.colors = @[(id)[UIColor blackColor].CGColor,
                             (id)[UIColor blackColor].CGColor];
-    fromGradient.startPoint = CGPointMake(0.0, 0.5);
-    fromGradient.endPoint = CGPointMake(0, 0.5);
-    UIView *fromShadow = [[UIView alloc]initWithFrame:view.bounds];
-    fromShadow.backgroundColor = [UIColor clearColor];
-    [fromShadow.layer insertSublayer:fromGradient atIndex:1];
-    fromShadow.alpha = 0.0;
-    [view addSubview:fromShadow];
+    gradient.startPoint = CGPointMake(0.0, 0.5);
+    gradient.endPoint = CGPointMake(1.0, 0.5);
+    UIView *shadow = [[UIView alloc]initWithFrame:view.bounds];
+    shadow.backgroundColor = [UIColor clearColor];
+    [shadow.layer insertSublayer:gradient atIndex:1];
+    shadow.alpha = alpha;
+    [view addSubview:shadow];
 }
 @end
