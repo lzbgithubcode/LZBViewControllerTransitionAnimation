@@ -19,7 +19,9 @@
 
 #使用方法
 需要使用什么动画可以直接导入头文件并创建转场动画
+
 比如:要使用QQ电话的转场，使用步骤
+
 1.#import "LZBQQPhoneTransition.h"
 
 2.创建转场动画对象
@@ -87,5 +89,5 @@ Dismiss:(LZBBaseTransitionDismiss) dismissCallBack;
 - (UIView *)toView:(id <UIViewControllerContextTransitioning>)transitionContext;
 
 #备注
-本demo适合本人自己的项目，如果您你和我有同样的需求您可以下载代码，并随心更改。本demo也支持自定义转场动画，方法非常简单，可参照本demo
+本demo适合本人的项目，如果您和我有同样的需求您可以下载代码，并随心更改。本demo也支持个人自定义转场动画，方法非常简单，可参照本demo实现
 
